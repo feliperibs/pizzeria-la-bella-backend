@@ -1,15 +1,15 @@
-const User = require('./models/user')
-const Item = require('./models/item')
-const Opening = require('./models/opening')
-const Order = require('./models/order')
-const Owner = require('./models/owner')
-const Pizzeria = require('./models/pizzeria')
+const User = require('../models/user')
+const Item = require('../models/item')
+const Opening = require('../models/opening')
+const Order = require('../models/order')
+const Owner = require('../models/owner')
+const Pizzeria = require('../models/pizzeria')
 
-const populate_db = require('./utils/populate_db')
+const populate_db = require('../utils/populate_db')
 
 const config = require('./config')
 
-const sequelize = require('./db/db')
+const sequelize = require('../db/db')
 const express = require('express')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
@@ -30,7 +30,7 @@ sequelize.sync({ logging: config.env == 'dev', force: config.env == 'testing' })
         else
             app.use(helmet())
 
-        app.use('/api', require('./routes/api'))
+        app.use('/api', require('../routes/api'))
 
         app.listen(config.api.port, '0.0.0.0', () => {
             console.log(`Express is running on port ${config.api.port}`)

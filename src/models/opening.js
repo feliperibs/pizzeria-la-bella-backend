@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize')
+const mongoose = require('mongoose');
 const sequelize = require('../db/db')
 
 class Opening extends Model { }

@@ -1,7 +1,21 @@
-const { Model, DataTypes } = require('sequelize')
-const config = require('../config')
-const crypto = require('crypto')
-const sequelize = require('../db/db')
+
+const schema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  // ...
+});
+
+module.exports = mongoose.model('User', schema);
 
 class User extends Model {
     static encryptPassword(password) {

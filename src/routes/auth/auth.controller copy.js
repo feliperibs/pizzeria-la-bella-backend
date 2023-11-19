@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken')
 
-const User = require('../../../models/user')
-const Owner = require('../../../models/owner')
+const User = require('../../models/user')
+const Owner = require('../../models/owner')
 const config = require('../../../config')
 
 exports.registerUser = (req, res) => {
