@@ -18,3 +18,4 @@ exports.router.use("/pizzas", pizza_router_1.PizzaRouter);
 // router.use('/owner', typeChecker.ownerMiddleware)
 // // route owner
 // router.use('/owner', owner)
+//# sourceMappingURL=index.js.map

@@ -61,3 +61,4 @@ const authenticateMiddleware = (req, res, next) => __awaiter(void 0, void 0, voi
     }
 });
 exports.authenticateMiddleware = authenticateMiddleware;
+//# sourceMappingURL=auth-middleware.js.map

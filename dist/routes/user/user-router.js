@@ -10,3 +10,4 @@ const user_controller_1 = require("../../controllers/user.controller");
 exports.UserRouter = express_1.default.Router();
 exports.UserRouter.get("/", auth_middleware_1.authenticateMiddleware, user_controller_1.getUsers);
 exports.UserRouter.get("/:id", auth_middleware_1.authenticateMiddleware, user_controller_1.getUser);
+//# sourceMappingURL=user-router.js.map

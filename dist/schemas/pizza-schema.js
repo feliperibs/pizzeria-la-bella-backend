@@ -32,3 +32,4 @@ const pizzaSchema = new mongoose_1.Schema({
     imageUrl: { type: String, required: false },
 }, { collection: 'pizza' });
 exports.PizzaModel = mongoose_1.default.model('Pizza', pizzaSchema);
+//# sourceMappingURL=pizza-schema.js.map

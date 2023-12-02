@@ -9,3 +9,4 @@ const auth_controller_1 = require("../../controllers/auth.controller");
 exports.AuthRouter = express_1.default.Router();
 exports.AuthRouter.post("/register", auth_controller_1.register);
 exports.AuthRouter.post("/login", auth_controller_1.login);
+//# sourceMappingURL=auth-router.js.map

@@ -72,3 +72,4 @@ userSchema.methods.comparePassword = function (password) {
     });
 };
 exports.UserModel = mongoose_1.default.model('User', userSchema);
+//# sourceMappingURL=user-schema.js.map

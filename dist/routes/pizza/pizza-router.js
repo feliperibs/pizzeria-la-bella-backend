@@ -10,3 +10,4 @@ const pizza_controller_1 = require("../../controllers/pizza.controller");
 exports.PizzaRouter = express_1.default.Router();
 exports.PizzaRouter.get("/", auth_middleware_1.authenticateMiddleware, pizza_controller_1.getPizzas);
 exports.PizzaRouter.post("/create", auth_middleware_1.authenticateMiddleware, pizza_controller_1.register);
+//# sourceMappingURL=pizza-router.js.map

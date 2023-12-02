@@ -26,3 +26,4 @@ mongoose_1.default
     app.use("/api", routes_1.router);
 })
     .catch((err) => console.log("Database connection error", err));
+//# sourceMappingURL=index.js.map
