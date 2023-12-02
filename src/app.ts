@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const url = "mongodb://127.0.0.1:27017/pizzeria-la-bella";
+const url = "mongodb+srv://felipeerib:gi5n4tPohI55gg7s@cluster0.yfo4rfk.mongodb.net/";
 
 mongoose
   .connect(url)

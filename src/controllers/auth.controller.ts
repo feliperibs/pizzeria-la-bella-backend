@@ -1,5 +1,4 @@
 import * as jwt from "jsonwebtoken";
-import * as bcrypt from "bcrypt";
 import * as express from "express";
 import { UserModel } from "../schemas/user-schema";
 import { IUserRequest } from "../models/user-request";
@@ -17,7 +16,6 @@ export const register = async (
 
     if (userExists?.email) {
       res.status(403).json({ message: "Email already registered" });
-      throw new Error("Email already registered");
     } else {
 
       const user = new UserModel({
@@ -37,7 +35,6 @@ export const register = async (
       });
 
       const createdUser = await user.save();
-      console.log('SENHAS 3', password, createdUser.password);
 
       res.status(201).json({ message: "Registration successful" });
     }
@@ -71,7 +68,7 @@ export const login = async (
         expiresIn: "1 hour",
       }
     );
-    res.status(200).json({ token });
+    res.status(200).json({ token, user});
   } catch (error) {
     next(error);
   }

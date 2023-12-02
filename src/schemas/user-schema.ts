@@ -34,7 +34,6 @@ userSchema.pre('save', async function (this:IUser, next) {
 });
 
 userSchema.methods.comparePassword = async function (password: string): Promise<boolean> {
-  console.log('SENHAS', password, this.password);
   return bcrypt.compareSync(password, this.password);
 };
 
