@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/feliperibs/pizzeria-la-bella-backend#readme",
   "dependencies": {
+    "@netlify/functions": "^2.4.0",
     "@types/mongodb": "^4.0.7",
     "@vercel/node": "^3.0.11",
     "bcrypt": "^5.1.1",
@@ -30,7 +31,8 @@
     "moment": "^2.29.4",
     "mongoose": "^8.0.1",
     "morgan": "^1.10.0",
-    "sequelize": "^5.21.10"
+    "sequelize": "^5.21.10",
+    "serverless-http": "^3.2.0"
   },
   "bugs": {
     "url": "https://github.com/feliperibs/pizzeria-la-bella/issues"
