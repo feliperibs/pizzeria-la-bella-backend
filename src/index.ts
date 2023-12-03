@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const url ="mongodb+srv://vercel-admin-user:vercel-admin-user@cluster0.yfo4rfk.mongodb.net/";
+const url ="mongodb+srv://vercel-admin-user:LeKmtAcx4cWH1UrU@cluster0.yfo4rfk.mongodb.net/";
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
