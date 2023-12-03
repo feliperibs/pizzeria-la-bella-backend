@@ -26,5 +26,5 @@ mongoose_1.default
     });
     exports.app.use("/api", routes_1.router);
 })
-    .catch((err) => console.log("Database connection error", err));
+    .catch((err) => { throw new Error(err); });
 //# sourceMappingURL=index.js.map

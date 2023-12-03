@@ -26,4 +26,4 @@ mongoose
     
     app.use("/api", router);
   })
-  .catch((err) => console.log("Database connection error", err));
+  .catch((err) => { throw new Error(err)});
