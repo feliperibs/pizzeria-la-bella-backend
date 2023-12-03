@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 export const handler = async (event) => {
   try {
     mongoose
-      .connect("process.env.MONGODB_URI as string")
+      .connect("mongodb+srv://felipeerib:gi5n4tPohI55gg7s@cluster0.yfo4rfk.mongodb.net/")
       .then(() => {
         app.get("/", (_req: express.Request, res: express.Response) => {
           return res.send("Express Typescript on Vercel");
