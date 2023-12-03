@@ -4,7 +4,7 @@
   "description": "pizzeria mama mia",
   "main": "src/index.ts",
   "scripts": {
-    "start": "vercel dev",
+    "start": "ts-node src/",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "add-build": "git add dist"
