@@ -21,10 +21,9 @@ exports.app.listen(port, () => {
 exports.app.get("/", (_req, res) => {
     return res.send("Express Typescript on Vercel");
 });
+exports.app.use("/api", routes_1.router);
 mongoose_1.default
     .connect(url)
-    .then(() => {
-    exports.app.use("/api", routes_1.router);
-})
+    .then(() => { })
     .catch((err) => console.log("Database connection error", err));
 //# sourceMappingURL=index.js.map

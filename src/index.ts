@@ -21,9 +21,9 @@ app.get("/", (_req: express.Request, res: express.Response) => {
   return res.send("Express Typescript on Vercel");
 });
 
+app.use("/api", router);
+
 mongoose
   .connect(url)
-  .then(() => {
-    app.use("/api", router);
-  })
+  .then(() => {})
   .catch((err) => console.log("Database connection error", err));
