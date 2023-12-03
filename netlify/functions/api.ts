@@ -9,24 +9,29 @@ const api = express();
 router.get("/hello", (req, res) => res.send("Hello World!"));
 
 dotenv.config();
-const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+api.use(bodyParser.json());
+api.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose
+
+
+const apiHandler = serverless(api);
+export const handler = async (event, context) => {
+  mongoose
   .connect("mongodb+srv://felipeerib:gi5n4tPohI55gg7s@cluster0.yfo4rfk.mongodb.net/")
   .then(() => {
-    app.get("/", (_req: express.Request, res: express.Response) => {
+    api.get("/", (_req: express.Request, res: express.Response) => {
       return res.send("Express Typescript on Vercel");
     });
 
-    app.use("/api", router);
+    api.use("/api", router);
   })
   .catch((err) => {
     throw new Error(err);
   });
-
-export const handler = serverless(api);
+  const result = await apiHandler(event, context);
+  // and here
+  return result;
+};
 
