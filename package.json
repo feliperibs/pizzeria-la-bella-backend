@@ -4,14 +4,12 @@
   "description": "pizzeria mama mia",
   "main": "src/index.ts",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start": "vercel dev",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rimraf dist && tsc",
-    "ts.check": "tsc --project tsconfig.json",
+    "build": "tsc",
     "add-build": "git add dist"
   },
   "pre-commit": [
-    "ts.check",
     "build",
     "add-build"
   ],
@@ -22,6 +20,7 @@
   "homepage": "https://github.com/feliperibs/pizzeria-la-bella-backend#readme",
   "dependencies": {
     "@types/mongodb": "^4.0.7",
+    "@vercel/node": "^3.0.11",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
