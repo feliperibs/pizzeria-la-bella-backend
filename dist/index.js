@@ -18,12 +18,13 @@ const url = "mongodb+srv://felipeerib:gi5n4tPohI55gg7s@cluster0.yfo4rfk.mongodb.
 exports.app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
-exports.app.get("/", (_req, res) => {
-    return res.send("Express Typescript on Vercel");
-});
-exports.app.use("/api", routes_1.router);
 mongoose_1.default
     .connect(url)
-    .then(() => { })
+    .then(() => {
+    exports.app.get("/", (_req, res) => {
+        return res.send("Express Typescript on Vercel");
+    });
+    exports.app.use("/api", routes_1.router);
+})
     .catch((err) => console.log("Database connection error", err));
 //# sourceMappingURL=index.js.map

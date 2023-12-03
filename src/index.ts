@@ -17,13 +17,13 @@ app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
 
-app.get("/", (_req: express.Request, res: express.Response) => {
-  return res.send("Express Typescript on Vercel");
-});
-
-app.use("/api", router);
-
 mongoose
   .connect(url)
-  .then(() => {})
+  .then(() => {
+    app.get("/", (_req: express.Request, res: express.Response) => {
+      return res.send("Express Typescript on Vercel");
+    });
+    
+    app.use("/api", router);
+  })
   .catch((err) => console.log("Database connection error", err));
