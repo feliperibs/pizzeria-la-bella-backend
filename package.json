@@ -4,7 +4,7 @@
   "description": "pizzeria mama mia",
   "main": "src/index.ts",
   "scripts": {
-    "start": "ts-node src/",
+    "start": "ts-node src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "add-build": "git add dist"
