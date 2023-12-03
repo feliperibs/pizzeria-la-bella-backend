@@ -13,12 +13,11 @@ const app = (0, express_1.default)();
 const port = process.env.PORT || 3000;
 app.use(body_parser_1.default.json());
 app.use(body_parser_1.default.urlencoded({ extended: true }));
-const url = "mongodb+srv://vercel-admin-user:LeKmtAcx4cWH1UrU@cluster0.yfo4rfk.mongodb.net/";
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
 mongoose_1.default
-    .connect(url)
+    .connect(process.env.MONGODB_URI)
     .then(() => {
     app.get("/", (_req, res) => {
         return res.send("Express Typescript on Vercel");
