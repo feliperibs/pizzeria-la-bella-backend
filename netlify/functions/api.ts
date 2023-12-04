@@ -10,6 +10,12 @@ router.get("/hello", (req, res) => res.send("Hello World!"));
 dotenv.config();
 api.use(bodyParser.json());
 api.use(bodyParser.urlencoded({ extended: true }));
+api.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
+  next();
+});
 
 const apiHandler = serverless(api);
 export const handler = async (event, context) => {
@@ -17,13 +23,6 @@ export const handler = async (event, context) => {
   .connect("mongodb+srv://felipeerib:gi5n4tPohI55gg7s@cluster0.yfo4rfk.mongodb.net/")
   .then(() => {
     api.use("/api", router);
-
-    api.use((req, res, next) => {
-      res.setHeader('Access-Control-Allow-Origin', '*');
-      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-      res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
-      next();
-    });
   })
   .catch((err) => {
     throw new Error(err);
