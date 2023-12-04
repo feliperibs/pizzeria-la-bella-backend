@@ -17,6 +17,13 @@ export const handler = async (event, context) => {
   .connect("mongodb+srv://felipeerib:gi5n4tPohI55gg7s@cluster0.yfo4rfk.mongodb.net/")
   .then(() => {
     api.use("/api", router);
+
+    api.use(function(req, res, next) {
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+      res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
+      next();
+    });
   })
   .catch((err) => {
     throw new Error(err);
