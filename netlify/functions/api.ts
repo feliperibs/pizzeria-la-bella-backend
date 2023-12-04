@@ -18,7 +18,7 @@ export const handler = async (event, context) => {
   .then(() => {
     api.use("/api", router);
 
-    api.use(function(req, res, next) {
+    api.use((req, res, next) => {
       res.setHeader('Access-Control-Allow-Origin', '*');
       res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
       res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
