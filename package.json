@@ -9,10 +9,6 @@
     "build": "tsc",
     "add-build": "git add dist"
   },
-  "pre-commit": [
-    "build",
-    "add-build"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/feliperibs/pizzeria-la-bella-backend.git"

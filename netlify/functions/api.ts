@@ -7,24 +7,15 @@ import { router } from "../../src/routes";
 
 const api = express();
 router.get("/hello", (req, res) => res.send("Hello World!"));
-
 dotenv.config();
-const port = process.env.PORT || 3000;
-
 api.use(bodyParser.json());
 api.use(bodyParser.urlencoded({ extended: true }));
-
-
 
 const apiHandler = serverless(api);
 export const handler = async (event, context) => {
   mongoose
   .connect("mongodb+srv://felipeerib:gi5n4tPohI55gg7s@cluster0.yfo4rfk.mongodb.net/")
   .then(() => {
-    api.get("/", (_req: express.Request, res: express.Response) => {
-      return res.send("Express Typescript on Vercel");
-    });
-
     api.use("/api", router);
   })
   .catch((err) => {
