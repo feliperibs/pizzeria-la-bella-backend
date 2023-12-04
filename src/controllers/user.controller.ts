@@ -1,6 +1,7 @@
 import * as express from "express";
 import { UserModel } from "../schemas/user-schema";
 import { IUser } from "../models/user";
+import moment from "moment";
 
 export const getUsers = async (
   _req: express.Request,
@@ -43,13 +44,13 @@ export const register = async (
   try {
     const user = req.body as IUser;
 
-    const { name, cpf, creation_date, email, password } = user;
+    const { name, cpf, email, password } = user;
     const address = user.address;
 
     const pizzaRequest = new UserModel({
       name,
       cpf,
-      creation_date,
+      creation_date: moment(),
       address,
       email,
       password,

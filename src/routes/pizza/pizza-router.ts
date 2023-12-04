@@ -4,5 +4,5 @@ import { getPizzas, register } from "../../controllers/pizza.controller";
 
 export const PizzaRouter = express.Router();
 
-PizzaRouter.get("/",authenticateMiddleware, getPizzas);
+PizzaRouter.get("/", getPizzas);
 PizzaRouter.post("/create", authenticateMiddleware, register); 
