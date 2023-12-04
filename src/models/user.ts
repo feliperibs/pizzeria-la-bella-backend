@@ -6,7 +6,7 @@ export interface IUser {
   address: {
     street: string;
     number: number;
-    POST_CODE: string;
+    postcode: string;
     city: string;
     state: string;
   };

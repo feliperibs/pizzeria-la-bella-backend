@@ -3,7 +3,7 @@ export interface IUserRequest {
   cpf: string;
   street: string;
   number: number;
-  POST_CODE: string;
+  postcode: string;
   city: string;
   state: string;
   email: string;

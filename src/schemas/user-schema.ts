@@ -13,7 +13,7 @@ const userSchema = new Schema<IUser>({
     type: {
       street: { type: String, required: true },
       number: { type: Number, required: true },
-      POST_CODE: { type: String, required: true },
+      postcode: { type: String, required: true },
       city: { type: String, required: true },
       state: { type: String, required: true },
     },

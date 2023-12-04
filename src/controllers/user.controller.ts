@@ -34,3 +34,30 @@ export const getUser = async (
     throw Error(err);
   }
 };
+
+export const register = async (
+  req: express.Request,
+  res: express.Response,
+  next: express.NextFunction
+) => {
+  try {
+    const user = req.body as IUser;
+
+    const { name, cpf, creation_date, email, password } = user;
+    const address = user.address;
+
+    const pizzaRequest = new UserModel({
+      name,
+      cpf,
+      creation_date,
+      address,
+      email,
+      password,
+      is_admin: false,
+    });
+
+    res.status(201).json(await pizzaRequest.save());
+  } catch (error) {
+    next(error);
+  }
+};

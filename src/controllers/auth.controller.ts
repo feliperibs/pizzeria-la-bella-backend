@@ -24,7 +24,7 @@ export const register = async (
           street: req.body.street,
           city: req.body.city,
           number: req.body.number,
-          POST_CODE: req.body.POST_CODE,
+          postcode: req.body.postcode,
           state: req.body.state,
         },
         cpf,
