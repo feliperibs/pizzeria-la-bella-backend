@@ -30,6 +30,23 @@ export const register = async (
   }
 };
 
+export const getPizza = async (
+  req: express.Request,
+  res: express.Response,
+  next: express.NextFunction
+) => {
+  try {
+    const id = req.params.id;
+    const pizza: IPizza | null = await PizzaModel.findOne({ _id: id });
+
+    res.json(pizza);
+  } catch (err: any) {
+    res.status(500).json({ error: "Internal server error" });
+    next(err);
+    throw Error(err);
+  }
+};
+
 export const getPizzas = async (
   _req: express.Request,
   res: express.Response,

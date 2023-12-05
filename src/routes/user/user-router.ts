@@ -6,4 +6,4 @@ export const UserRouter = express.Router();
 
 UserRouter.get("/", authenticateMiddleware, getUsers);
 UserRouter.get("/:id", authenticateMiddleware, getUser);
-UserRouter.get("/create", register);
+UserRouter.post("/create", register);

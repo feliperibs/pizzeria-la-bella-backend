@@ -3,7 +3,7 @@ import * as express from "express";
 import { UserModel } from "../schemas/user-schema";
 import { IUserRequest } from "../models/user-request";
 import moment from "moment";
-import { ILoginRequest } from "../models/login-request copy";
+import { ILoginRequest } from "../models/login-request";
 
 export const register = async (
   req: express.Request,
