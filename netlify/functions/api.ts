@@ -8,7 +8,7 @@ import { router } from "../../src/routes";
 const api = express();
 router.get("/hello", (req, res) => res.send("Hello World!"));
 dotenv.config();
-api.use((req, res, next) => {
+api.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
