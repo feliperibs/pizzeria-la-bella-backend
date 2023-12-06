@@ -8,14 +8,14 @@ import { router } from "../../src/routes";
 const api = express();
 router.get("/hello", (req, res) => res.send("Hello World!"));
 dotenv.config();
-api.use(bodyParser.json());
-api.use(bodyParser.urlencoded({ extended: true }));
 api.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
   next();
 });
+api.use(bodyParser.json());
+api.use(bodyParser.urlencoded({ extended: true }));
 
 const apiHandler = serverless(api);
 export const handler = async (event, context) => {
